@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import Link from "next/link"
-import { Laptop, Monitor, Cpu, Headphones, HardDrive, Smartphone, Gamepad } from "lucide-react"
+import { Laptop, Monitor, Cpu, Headphones, HardDrive} from "lucide-react"
 
 // Categories data structure
 const categories = [
