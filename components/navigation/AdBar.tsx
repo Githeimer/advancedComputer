@@ -12,7 +12,7 @@ const adData = [
 
 const AdBar = () => {
   return (
-    <div className="w-full bg-[var(--ad-bar-bg)] h-[32px] mb-3">
+    <div className="w-full bg-[var(--ad-bar-bg)] h-[32px]" id='navbar'>
       <div className="landing_container flex items-center justify-around md:justify-between text-[var(--ad-bar-text)] text-sm font-medium h-full">
         
         {/* Left slogan */}

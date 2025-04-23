@@ -163,7 +163,7 @@ export function CategoryBar({ vertical = false }: { vertical?: boolean }) {
       <div className="w-full">
         <style jsx global>{animationStyles}</style>
         
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full ">
           {categories.map((category) => (
             <div key={category.title} className="w-full">
               {/* Category button */}
@@ -216,11 +216,11 @@ export function CategoryBar({ vertical = false }: { vertical?: boolean }) {
   } else {
     // Horizontal layout
     return (
-      <div className="w-full relative mt-3.5" onMouseLeave={handleMouseLeave}>
+      <div className="w-full relative mt-5 " onMouseLeave={handleMouseLeave}>
         <style jsx global>{animationStyles}</style>
         
         {/* Main navigation bar */}
-        <div className="flex flex-wrap justify-around w-full bg-[#199f4c] h-10 items-center rounded-xs">
+        <div className="flex flex-wrap justify-around w-full bg-[#03913F] h-10 items-center rounded-xs">
           {categories.map((category) => (
             <div 
               key={category.title}
@@ -229,7 +229,7 @@ export function CategoryBar({ vertical = false }: { vertical?: boolean }) {
             >
               <Link 
                 href={category.href}
-                className="flex h-full items-center px-4 text-white hover:bg-[#037a2f] transition-colors duration-200"
+                className="flex h-full items-center px-4 text-[var(--text-color-drop-down)] montserrat-regular font-stretch font- hover:bg-[#037a2f] transition-colors duration-200"
               >
                 <span>{category.title}</span>
               </Link>

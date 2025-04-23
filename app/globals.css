@@ -10,12 +10,40 @@
 
 * {
   scroll-behavior: smooth;
-
-  box-sizing: border-box;
 }
+
+/* globals.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 
 .montserrat {
   font-family: 'Montserrat', sans-serif;
+}
+
+.montserrat-thin {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+.montserrat-light {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+.montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.roboto_thin{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -96,8 +124,9 @@
 }
 
 :root {
+  --adv-logo-color: #03913F
   --text-color-logo: #0C3C43;
-  --fill-color: #028755;
+  --fill-color: #04965e;
   --text-color-drop-down: #FEFEEA;
   --dropdown-text-color: #030300;
   --drop-down-color: #FCFCFC;
