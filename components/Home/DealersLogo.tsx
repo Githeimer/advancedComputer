@@ -52,7 +52,7 @@ const DealersLogo = () => {
 
   return (
     <div 
-      className="w-full py-8 overflow-hidden"
+      className="w-full py-5 md:py-9 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchMove={() => setIsPaused(true)}

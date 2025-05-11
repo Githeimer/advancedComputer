@@ -124,7 +124,7 @@ html, body {
 }
 
 :root {
-  --adv-logo-color: #03913F
+  --adv-logo-color: #03913F;
   --text-color-logo: #0C3C43;
   --fill-color: #04965e;
   --text-color-drop-down: #FEFEEA;

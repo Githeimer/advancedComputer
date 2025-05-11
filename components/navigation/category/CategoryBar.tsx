@@ -216,7 +216,7 @@ export function CategoryBar({ vertical = false }: { vertical?: boolean }) {
   } else {
     // Horizontal layout
     return (
-      <div className="w-full relative mt-5 " onMouseLeave={handleMouseLeave}>
+      <div className="w-full  relative mt-5 " onMouseLeave={handleMouseLeave}>
         <style jsx global>{animationStyles}</style>
         
         {/* Main navigation bar */}
