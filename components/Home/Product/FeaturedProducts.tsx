@@ -62,6 +62,7 @@ const FeaturedProducts = () => {
     
   return (
     <div className='landing_container py-2'>
+        <span className='text-red-600'>The website is in development phase and do not own any products or images</span>
       <ProductCarousel  products={products} />
     </div>
   )

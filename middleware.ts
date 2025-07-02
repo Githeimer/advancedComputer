@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 export async function middleware(req: NextRequest) {
-  console.log("MIDDLEWARE HIT", req.url);
   // Extract the hostname to handle subdomains for production (admin subdomain or not)
   const hostname = req.headers.get("host") || "";
 
@@ -12,9 +11,7 @@ export async function middleware(req: NextRequest) {
 
   // Admin Route Access Control
   if (isAdminRoute || isAdminSubdomain) {
-    console.log("ADMIN ROUTE HIT", req.url);
     const token = await getToken({ req });
-    console.log("ADMIN TOKEN", token);
     if (!token) {
       // Redirect to admin login page if no token
       return NextResponse.redirect(new URL('/adminauth', req.url));
@@ -30,16 +27,13 @@ export async function middleware(req: NextRequest) {
   // User Route Access Control
   const isUserRoute = req.url.startsWith('/profile') || req.url.includes('/profile')
 
-  console.log("USER ROUTE", isUserRoute);
   if (isUserRoute) {
-    console.log("USER ROUTE HIT", req.url);
     const token = await getToken({ req });
 
     if (!token) {
       // Redirect to login page if no token
       return NextResponse.redirect(new URL('/auth/login', req.url));
     }
-    console.log(token.role)
     // User role check
     if (token.role !== 'user') {
       return NextResponse.redirect(new URL('/', req.url)); // Redirect to home if not a user

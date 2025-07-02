@@ -41,6 +41,8 @@ export const validateUserCredentials = async (email: string, password: string): 
         where: { email }
     });
 
+    
+
     if (!user) return null;
 
     if(user.role == "admin") {

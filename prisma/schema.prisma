@@ -22,6 +22,54 @@ model User {
   createdAt DateTime @default(now())
 }
 
+model Category {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  slug        String @unique
+
+  Attribute Attribute[]
+
+  Product Product[]
+}
+
+model Attribute {
+  id            Int    @id @default(autoincrement())
+  categoryId    Int
+  attributeName String
+  attributeSlug String @unique
+
+  category Category @relation(fields: [categoryId], references: [id])
+
+  Product_Attribute Product_Attribute[]
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  Thumbnnail  String
+  Images      String[]
+  description String
+  price       Float
+  stock       Int
+  categoryId  Int
+
+  category Category @relation(fields: [categoryId], references: [id])
+
+  Product_Attribute Product_Attribute[]
+}
+
+model Product_Attribute {
+  id          Int    @id @default(autoincrement())
+  productId   String
+  attributeId Int
+  value       String
+
+  product   Product   @relation(fields: [productId], references: [id])
+  attribute Attribute @relation(fields: [attributeId], references: [id])
+}
+
 enum Role {
   user
   admin
